@@ -1,0 +1,404 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B23ED337-7FCC-47E7-BCC8-D359E4662E7D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Culinary_Fusion</RootNamespace>
+    <AssemblyName>Culinary_Fusion</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44355</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\clAccount\Culinary_Fusion.clAccount.Account.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clAccount\Culinary_Fusion.clAccount.GetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clAccount\Culinary_Fusion.clAccount.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clAccount\Culinary_Fusion.clAccount.RegisterUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clAccount\Culinary_Fusion.clAccount.TestingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\clAccount\wsAccount.wsdl" />
+    <None Include="Connected Services\clRecipe\configuration91.svcinfo" />
+    <None Include="Connected Services\clRecipe\configuration.svcinfo" />
+    <None Include="Connected Services\clAccount\configuration91.svcinfo" />
+    <None Include="Connected Services\clAccount\configuration.svcinfo" />
+    <None Include="Connected Services\clAccount\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Culinary Fusion cooking video%27s\Donut Recipe _ Homemade Donut Recipe%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\Easy Butter Chicken Recipe%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\How To Make Tiramisu In 10 Minutes _ Easy Tiramisu _ Fuzz _ Buzz%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\I don_t buy bread anymore_ No knead_ No eggs_ No butter_ The easiest and cheapest bread recipe%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\Kaffee Mousse Dessert in 5 Minuten_ Es ist so lecker_ dass ich es jedes Wochenende mache_%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\Lotus Biscoff Dessert Cups - NO BAKE Dessert. Very Easy and Yummy_%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\Oreo Dessert Cups - NO BAKE Dessert. Quick_ Easy and Yummy_%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\Super Quick  Stir Fry Broccoli and Carrot with Chicken  _ Chicken with Broccoli Recipe%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\THE BEST HAMBURGER STEAK AND GRAVY DINNER _   MASHED POTATOES RECIPE _ QUICK _ EASY TUTORIAL%28360P%29.mp4" />
+    <Content Include="Culinary Fusion cooking video%27s\The Best Steak Dinner At Home_ Better Than Ruth Chris_%28360P%29.mp4" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Food\redbackground.jpeg" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.getCatByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.getCatNameByCatIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.getRecipeByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.postRecipeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.Recipe.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.TestingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.viewAllRecipeByUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.viewAllRecipesByCatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRecipe\Culinary_Fusion.clRecipe.viewAllRecipesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\clRecipe\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="LoggedOut.aspx" />
+    <Content Include="RecipeCategories.aspx" />
+    <Content Include="Recipe images\APPLE PIE.jpg" />
+    <Content Include="Recipe images\Avocado Toast.jpeg" />
+    <Content Include="Recipe images\BANANA BREAD.jpeg" />
+    <Content Include="Recipe images\BLUEBERRY.jpeg" />
+    <Content Include="Recipe images\caramel cookies.jpeg" />
+    <Content Include="Recipe images\Chicken Stir Fry.jpeg" />
+    <Content Include="Recipe images\Chocolate cake.jpeg" />
+    <Content Include="Recipe images\Grilled Salmon with Asparagus.jpeg" />
+    <Content Include="Recipe images\Grilled Vegetable Skewers.jpeg" />
+    <Content Include="Recipe images\Spaghetti Carbonara.jpeg" />
+    <Content Include="Recipe images\strawberry cake.jpg" />
+    <Content Include="RecipeUpload.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Tutorials.aspx" />
+    <Content Include="Videos\CulinaryFusionVideo.mp4" />
+    <Content Include="Videos\production_ID_3769033.mp4" />
+    <Content Include="Food\Baking\Corn Bread.jpg" />
+    <Content Include="Food\Baking\Cream Chesse Garlic bread.jpg" />
+    <Content Include="Food\Baking\Hamburger buns.jpg" />
+    <Content Include="Food\Culinary fusion logo.jpg" />
+    <Content Include="Food\Deserts\Chocolate Tiramisu.jpg" />
+    <Content Include="Food\Deserts\kiwi cheesecake.jpg" />
+    <Content Include="Food\Deserts\Orange mouse.jpg" />
+    <Content Include="Food\Deserts\Strawberry shortcake shooters.jpg" />
+    <Content Include="Food\Healthy Eats\Creamy avocado pasta.jpg" />
+    <Content Include="Food\Healthy Eats\Crispy chicken caesar salad%27.jpg" />
+    <Content Include="Food\Healthy Eats\Spiced Roasted pumpkin.jpg" />
+    <Content Include="Food\Healthy Eats\Vegetable soup.jpg" />
+    <Content Include="Food\Maincourses\Blackend shrimp and asparagus skillets.jpg" />
+    <Content Include="Food\Maincourses\Jerk shrimp pasta.jpg" />
+    <Content Include="Food\Maincourses\pan-seared steak and onion.jpg" />
+    <Content Include="Food\Maincourses\Pork Tenderlain and smashed potatoes.jpg" />
+    <Content Include="Images\Culinary fusion logo.jpg" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="UploadedRecipes.aspx" />
+    <Content Include="Webservices\wsRecipes.asmx" />
+    <None Include="Connected Services\clRating\configuration91.svcinfo" />
+    <None Include="Connected Services\clRating\configuration.svcinfo" />
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.ArrayOfInt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.rateRecipeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.Rating.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.viewAllRatingForRecipeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\clRating\Culinary_Fusion.clRating.viewRatingSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\clRating\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Webservices\wsAccount.asmx" />
+    <Content Include="Webservices\wsRating.asmx" />
+    <None Include="Connected Services\clRating\wsRating.wsdl" />
+    <None Include="Connected Services\clRecipe\wsRecipe.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\Category.cs" />
+    <Compile Include="Connected Services\clAccount\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\clRating\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\clRecipe\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedOut.aspx.cs">
+      <DependentUpon>LoggedOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedOut.aspx.designer.cs">
+      <DependentUpon>LoggedOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeCategories.aspx.cs">
+      <DependentUpon>RecipeCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipeCategories.aspx.designer.cs">
+      <DependentUpon>RecipeCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Rating.cs" />
+    <Compile Include="Classes\Recipe.cs" />
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeUpload.aspx.cs">
+      <DependentUpon>RecipeUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecipeUpload.aspx.designer.cs">
+      <DependentUpon>RecipeUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorials.aspx.cs">
+      <DependentUpon>Tutorials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutorials.aspx.designer.cs">
+      <DependentUpon>Tutorials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadedRecipes.aspx.cs">
+      <DependentUpon>UploadedRecipes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadedRecipes.aspx.designer.cs">
+      <DependentUpon>UploadedRecipes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webservices\wsAccount.asmx.cs">
+      <DependentUpon>wsAccount.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\wsRating.asmx.cs">
+      <DependentUpon>wsRating.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Webservices\wsRecipes.asmx.cs">
+      <DependentUpon>wsRecipes.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Recipe images\Chocolate cake.webp" />
+    <Content Include="Recipe images\strawberry cake.webp" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\clAccount\" />
+    <WCFMetadataStorage Include="Connected Services\clRating\" />
+    <WCFMetadataStorage Include="Connected Services\clRecipe\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50797</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44355/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
